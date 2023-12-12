@@ -1,0 +1,27 @@
+{
+    "name": "idmolotov/xi-monitor",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "idMolotov",
+            "email": "web.id.molotov@gmail.com",
+            "role": "Author"
+        }
+    ],
+    "description": "Simple monitoring for the PROJECT by PHP script for outer systems.",
+    "type": "project",
+    "require": {
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "guzzlehttp/guzzle": "^7.4.5",
+        "php": "^7.4"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "XiMonitor\\": "src/"
+        }
+    }
+}

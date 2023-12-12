@@ -1,0 +1,32 @@
+{
+    "name": "idmolotov/xi-monitor-example-app",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "idMolotov",
+            "email": "web.id.molotov@gmail.com",
+            "role": "Author"
+        }
+    ],
+    "license": "Copyright idMolotov",
+    "type": "project",
+    "description": "Monitoring based on the `xi-monitor` core",
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "idmolotov/xi-monitor": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "ssh://git@github.com:idMolotov/xi-monitor.git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "XiMonitor\\": "vendor/idmolotov/xi-monitor/src",
+            "EstmMonitor\\": "src"
+        }
+    }
+}

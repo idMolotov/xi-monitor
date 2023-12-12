@@ -1,0 +1,81 @@
+{
+    "log": {
+        "concatErrors__comment__": "`concatErrors` is optional, default FALSE, can be skip.",
+        "concatErrors": true,
+        "dir": "/home/directory",
+        "severityHighFilename": "xi-monitor-high.log",
+        "severityLowFilename": "xi-monitor-low.log"
+    },
+    "monitors": [
+        {
+            "isDirWritable": {
+                "severity": "high",
+                "dirs": [
+                    "/var/www/some-directory"
+                ]
+            }
+        },
+        {
+            "isDbConnectionAlive": {
+                "severity": "high",
+                "dsn": "pgsql:host=some.vph.hostname;port=5432;dbname=some-db-name;user=some-user-name",
+                "logDSN__comment__": "`logDSN` is optional, default FALSE, can be skip.",
+                "logDSN": true
+            }
+        },
+        {
+            "isEnoughDiskSpace": {
+                "severity": "high",
+                "mountPath__comment__": "`mountPath` is optional, default `/`, can be skip.",
+                "mountPath": "/",
+                "minFreeSpaceGB": 2
+            }
+        },
+        {
+            "isFileExists": {
+                "severity": "high",
+                "files": [
+                    "/var/www/some-file"
+                ]
+            }
+        },
+        {
+            "isDirExists": {
+                "severity": "high",
+                "dirs": [
+                    "/var/www/some-directory"
+                ]
+            }
+        },
+        {
+            "apiCalls": {
+                "severity": "high",
+                "urls": [
+                    "https://some.site/api/"
+                ],
+                "clientParameters__comment__": "`clientParameters` is optional, default [], can be skip.",
+                "clientParameters": {
+                    "verify": false
+                },
+                "clientRequestOptions__comment__": "`clientRequestOptions` is optional, default [], can be skip.",
+                "clientRequestOptions": {
+                },
+                "responseValidation": {
+                    "isBodyEmpty": false,
+                    "responseCode": 200,
+                    "__comment__": "Any set of the headers can be provided in natural key-value combination.",
+                    "content-type": "application/json"
+                }
+            }
+        },
+        {
+            "scriptExtension": {
+                "severity": "high",
+                "className": "\\CustomMonitor\\MonitorSomethingImportant",
+                "config": {
+                    "dsn": "pgsql:host=some.vph.hostname;port=5432;dbname=some-db-name;user=some-user-name"
+                }
+            }
+        }
+    ]
+}
